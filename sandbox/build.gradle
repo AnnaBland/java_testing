@@ -1,3 +1,10 @@
 apply plugin: 'java'
 apply plugin: 'application'
-mainClassName = 'Zero'
+mainClassName = 'ru.stqa.pft.sandbox.Zero'
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+    implementation 'org.testng:testng:7.1.0'
+}
