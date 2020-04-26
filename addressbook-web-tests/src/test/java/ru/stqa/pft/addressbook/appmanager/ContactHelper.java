@@ -30,4 +30,24 @@ public class ContactHelper extends HelperBase{
     public void AddNewContact() {
         click (By.linkText("add new"));
     }
+
+
+    public void selectContact() {
+        click(By.name("selected[]"));
+    }
+
+    public void deleteContact() {
+
+        click(By.cssSelector(".left:nth-child(8) > input"));
+        clickAlert();
+
+    }
+
+    public void initContactModification() {
+        click(By.cssSelector("tr:nth-child(2) > .center:nth-child(8) img"));
+    }
+
+    public void submitContactModify() {
+        click(By.name("update"));
+    }
 }
