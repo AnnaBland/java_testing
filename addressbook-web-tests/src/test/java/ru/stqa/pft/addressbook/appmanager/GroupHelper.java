@@ -56,4 +56,9 @@ public class GroupHelper extends HelperBase{
         submitGroupCreation();
         returnToGroupPage();
     }
+
+//    public boolean openHomePage() {
+//        if (wd.findElement(By.id("maintable"));
+//            return true;
+//    }
 }

@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 
-import java.util.NoSuchElementException;
+
 
 public class ContactHelper extends HelperBase{
 
@@ -30,7 +30,6 @@ public class ContactHelper extends HelperBase{
         type(By.name("mobile"),contactData.getMobile());
         type(By.name("work"),contactData.getWork());
         type(By.name("email"),contactData.getEmail());
-
 
         if (creation){
             new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
@@ -61,5 +60,16 @@ public class ContactHelper extends HelperBase{
 
     public void submitContactModify() {
         click(By.name("update"));
+    }
+
+    public void createContact(ContactData contactData, boolean b) {
+        AddNewContact();
+       fillContactForm(contactData, b);
+        submitAddNewContact();
+
+    }
+
+    public boolean isThereAContact() {
+        return isElementPresent(By.name("selected[]"));
     }
 }
