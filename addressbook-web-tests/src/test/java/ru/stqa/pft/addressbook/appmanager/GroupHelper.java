@@ -57,6 +57,10 @@ public class GroupHelper extends HelperBase{
         returnToGroupPage();
     }
 
+    public int getGroupCount() {
+        return wd.findElements(By.name("selected[]")).size();
+    }
+
 //    public boolean openHomePage() {
 //        if (wd.findElement(By.id("maintable"));
 //            return true;
