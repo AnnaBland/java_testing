@@ -4,13 +4,13 @@ import java.util.Objects;
 
 public class GroupData {
     private final String name;
-    private final String id;
+    private int id;
     private final String header;
     private final String footer;
 
 
 
-    public GroupData(String name, String id, String header, String footer) {
+    public GroupData(String name, int id, String header, String footer) {
         this.name = name;
         this.id = id;
         this.header = header;
@@ -19,13 +19,17 @@ public class GroupData {
 
     public GroupData(String name, String header, String footer) {
         this.name = name;
-        this.id = null;
+        this.id = 0;
         this.header = header;
         this.footer = footer;
     }
 
     public String getName() {
         return name;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override
@@ -50,7 +54,7 @@ public class GroupData {
                 '}';
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
     public String getHeader() {
