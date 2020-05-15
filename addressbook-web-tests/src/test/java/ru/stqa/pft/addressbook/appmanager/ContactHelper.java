@@ -58,8 +58,8 @@ public class ContactHelper extends HelperBase{
 
     }
 
-    public void initContactModification () {
-        click(By.cssSelector("tr:last-child > .center:nth-child(8) img"));
+    public void initContactModification (int index) {
+        wd.findElements(By.xpath("//img[@alt='Edit']")).get(index).click();
 
     }
 
