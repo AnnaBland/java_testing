@@ -9,13 +9,16 @@ import java.util.List;
 
 public class AddNewContactTests extends TestBase {
 
-  @Test
+  @Test ()
   public void testAddNewContact()  {
-    List<ContactData> before = app.contactHelper().getContactList();
-    ContactData contact = new ContactData("creat1@test.ru", "Testr1", "Testri", "trtt", "Testi", "Test", "Test ", "97", "8911777", "test1","test1" );
-    app.contactHelper().createContact(contact, true);
-    app.getNavigationHelper().gotoHomePage();
-    List<ContactData> after = app.contactHelper().getContactList();
+    List<ContactData> before = app.contact().list();
+    ContactData contact = new ContactData().
+            withEmail("creat1@test.ru").withFirstname("Testr1").withMiddlename("Testri").withLastname("trtt").withNickname("Testi").withCompany("Test").
+            withAddress("Test").withHomephone("98643567").withMobile("8944556632").withWork("Test1").withGroup("test1");
+
+    app.contact().create(contact, true);
+    app.goTo().homePage();
+    List<ContactData> after = app.contact().list();
     Assert.assertEquals(after.size(), before.size() + 1);
 
     before.add(contact);
