@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.model.Groups;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,6 +73,7 @@ public class ContactHelper extends HelperBase{
     public void delete(ContactData contact) throws InterruptedException {
         selectById(contact.getId());
         delete();
+        contactCahce = null;
         Thread.sleep(2000);
     }
 
@@ -85,6 +87,7 @@ public class ContactHelper extends HelperBase{
         addNewContact();
        fillForm(contact, b);
         submitAddNewContact();
+        contactCahce = null;
 
     }
 
@@ -92,6 +95,7 @@ public class ContactHelper extends HelperBase{
         initModification(contact.getId());
         fillForm(contact,false);
         submitModify();
+        contactCahce = null;
     }
     public void initModification(int id)  {
         wd.findElement (By.xpath("//a[@href='edit.php?id=" + id+"']")).click();
@@ -102,33 +106,24 @@ public class ContactHelper extends HelperBase{
 //        return isElementPresent(By.name("selected[]"));
 //    }
 
-    public List<ContactData> list() {
-        List<ContactData> contacts = new ArrayList<ContactData>();
-        List<WebElement> elements = wd.findElements(By.xpath("//table[@id='maintable']/tbody/tr[@name='entry']"));
-        for (WebElement element:elements) {
-            String firstname = element.findElement(By.cssSelector("td:nth-child(3)")).getText();
-            String lastname = element.findElement(By.cssSelector("td:nth-child(2)")).getText();
-            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("id"));
-            contacts.add(new ContactData().withId(id).withEmail("creat1@test.ru").withFirstname(firstname).withMiddlename("Testri").withLastname(lastname)
-                    .withNickname("Testi").withCompany("Test").withAddress("Test").withHomephone("98643567").withMobile("8944556632").withWork("Test1").withGroup("Test1"));
-        }
+    private Contacts contactCahce = null;
 
-        return contacts;
-    }
 
 
     public Contacts all() {
-        Contacts  contacts = new Contacts ();
+        if (contactCahce !=null) {
+            return new Contacts(contactCahce);
+        }
+        contactCahce = new Contacts();
         List<WebElement> elements = wd.findElements(By.xpath("//table[@id='maintable']/tbody/tr[@name='entry']"));
         for (WebElement element:elements) {
             String firstname = element.findElement(By.cssSelector("td:nth-child(3)")).getText();
             String lastname = element.findElement(By.cssSelector("td:nth-child(2)")).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("id"));
-            contacts.add(new ContactData().withId(id).withEmail("creat1@test.ru").withFirstname(firstname).withMiddlename("Testri").withLastname(lastname)
+            contactCahce.add(new ContactData().withId(id).withEmail("creat1@test.ru").withFirstname(firstname).withMiddlename("Testri").withLastname(lastname)
                     .withNickname("Testi").withCompany("Test").withAddress("Test").withHomephone("98643567").withMobile("8944556632").withWork("Test1").withGroup("Test1"));
         }
-
-        return contacts;
+        return new Contacts (contactCahce);
     }
 
 
