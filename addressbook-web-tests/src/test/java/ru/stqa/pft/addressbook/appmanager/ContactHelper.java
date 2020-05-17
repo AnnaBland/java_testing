@@ -8,9 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
-import ru.stqa.pft.addressbook.model.Groups;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -64,11 +62,6 @@ public class ContactHelper extends HelperBase{
 
     }
 
-    public void delete(int index) throws InterruptedException {
-        select(index);
-        delete();
-        Thread.sleep(2000);
-    }
 
     public void delete(ContactData contact) throws InterruptedException {
         selectById(contact.getId());
@@ -101,6 +94,9 @@ public class ContactHelper extends HelperBase{
         wd.findElement (By.xpath("//a[@href='edit.php?id=" + id+"']")).click();
     }
 
+    public int count() {
+        return wd.findElements(By.name("selected[]")).size();
+    }
 
 //    public boolean isThereAContact() {
 //        return isElementPresent(By.name("selected[]"));
