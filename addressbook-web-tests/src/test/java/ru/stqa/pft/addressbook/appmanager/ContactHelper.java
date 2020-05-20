@@ -30,10 +30,12 @@ public class ContactHelper extends HelperBase{
         type(By.name("nickname"),contactData.getNickname());
         type(By.name("company"),contactData.getCompany());
         type(By.name("address"),contactData.getAddress());
-        type(By.name("home"),contactData.getHomephone());
+        type(By.name("home"),contactData.getHomePhone());
         type(By.name("mobile"),contactData.getMobile());
         type(By.name("work"),contactData.getWork());
         type(By.name("email"),contactData.getEmail());
+        type(By.name("email2"),contactData.getEmail2());
+        type(By.name("email3"),contactData.getEmail3());
 
         if (creation){
             new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
@@ -85,13 +87,13 @@ public class ContactHelper extends HelperBase{
     }
 
     public void modify(ContactData contact)  {
-        initModification(contact.getId());
+        initModificationById(contact.getId());
         fillForm(contact,false);
         submitModify();
         contactCahce = null;
     }
-    public void initModification(int id)  {
-        wd.findElement (By.xpath("//a[@href='edit.php?id=" + id+"']")).click();
+    public void initModificationById(int id)  {
+        wd.findElement (By.xpath(String.format("//a[@href='edit.php?id=%s']",id))).click();
     }
 
     public int count() {
@@ -111,17 +113,37 @@ public class ContactHelper extends HelperBase{
             return new Contacts(contactCahce);
         }
         contactCahce = new Contacts();
-        List<WebElement> elements = wd.findElements(By.xpath("//table[@id='maintable']/tbody/tr[@name='entry']"));
+        List<WebElement> elements = wd.findElements(By.name("entry"));
         for (WebElement element:elements) {
+            List<WebElement> cells = element.findElements(By.tagName("td"));
             String firstname = element.findElement(By.cssSelector("td:nth-child(3)")).getText();
             String lastname = element.findElement(By.cssSelector("td:nth-child(2)")).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("id"));
-            contactCahce.add(new ContactData().withId(id).withEmail("creat1@test.ru").withFirstname(firstname).withMiddlename("Testri").withLastname(lastname)
-                    .withNickname("Testi").withCompany("Test").withAddress("Test").withHomephone("98643567").withMobile("8944556632").withWork("Test1").withGroup("Test1"));
+            String allPhones= cells.get(5).getText();
+            String allEmails=cells.get(4).getText();
+            String address = cells.get(3).getText();
+            contactCahce.add(new ContactData().withId(id).withAllEmails(allEmails).withFirstname(firstname).withMiddlename("Testri").withLastname(lastname)
+                    .withNickname("Testi").withCompany("Test").withAddress(address).withAllPhones(allPhones));
         }
         return new Contacts (contactCahce);
     }
 
 
+    public ContactData infoFromEditForm(ContactData contact) {
+        initModificationById(contact.getId());
+        String firstname = wd.findElement (By.name("firstname")).getAttribute("value");
+        String lastname = wd.findElement (By.name("lastname")).getAttribute("value");
+        String home = wd.findElement (By.name("home")).getAttribute("value");
+        String mobile = wd.findElement (By.name("mobile")).getAttribute("value");
+        String work = wd.findElement (By.name("work")).getAttribute("value");
+        String email= wd.findElement (By.name("email")).getAttribute("value");
+        String email2 = wd.findElement (By.name("email2")).getAttribute("value");
+        String email3 = wd.findElement (By.name("email3")).getAttribute("value");
+        String address = wd.findElement (By.name("address")).getText();
+        wd.navigate().back();
+        return new ContactData().withId(contact.getId()).withFirstname(firstname)
+                .withLastname(lastname).withHomephone(home).withMobile(mobile).withWork(work)
+                .withEmail(email).withEmail2(email2).withEmail3(email3).withAddress(address);
     }
+}
 
