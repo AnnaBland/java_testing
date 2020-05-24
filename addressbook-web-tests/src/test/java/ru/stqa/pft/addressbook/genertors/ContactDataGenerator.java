@@ -83,7 +83,8 @@ public class ContactDataGenerator {
                     .withEmail(String.format("email1_%s@mail.ru",i))
                     .withEmail2(String.format("email2_%s@mail.ru",i))
                     .withEmail3(String.format("email3_%s@mail.ru",i))
-                    .withCompany(String.format("company",i)));
+                    .withCompany(String.format("company %s",i))
+                    .withGroup(String.format("test1")));
 
         }
         return contacts;

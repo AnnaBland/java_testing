@@ -35,7 +35,7 @@ public class ContactData {
     private String mobile;
     @Expose
     private String work;
-    @XStreamOmitField
+    @Expose
     private String group;
     @Expose
     private String allPhones;
