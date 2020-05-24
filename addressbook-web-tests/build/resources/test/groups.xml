@@ -1,0 +1,56 @@
+<list>
+  <group>
+    <name>test 0</name>
+    <id>2147483647</id>
+    <header>header 0</header>
+    <footer>footer 0</footer>
+  </group>
+  <group>
+    <name>test 1</name>
+    <id>2147483647</id>
+    <header>header 1</header>
+    <footer>footer 1</footer>
+  </group>
+  <group>
+    <name>test 2</name>
+    <id>2147483647</id>
+    <header>header 2</header>
+    <footer>footer 2</footer>
+  </group>
+  <group>
+    <name>test 3</name>
+    <id>2147483647</id>
+    <header>header 3</header>
+    <footer>footer 3</footer>
+  </group>
+  <group>
+    <name>test 4</name>
+    <id>2147483647</id>
+    <header>header 4</header>
+    <footer>footer 4</footer>
+  </group>
+  <group>
+    <name>test 5</name>
+    <id>2147483647</id>
+    <header>header 5</header>
+    <footer>footer 5</footer>
+  </group>
+  <group>
+    <name>test 6</name>
+    <id>2147483647</id>
+    <header>header 6</header>
+    <footer>footer 6</footer>
+  </group>
+  <group>
+    <name>test 7</name>
+    <id>2147483647</id>
+    <header>header 7</header>
+    <footer>footer 7</footer>
+  </group>
+  <group>
+    <name>test 8</name>
+    <id>2147483647</id>
+    <header>header 8</header>
+    <footer>footer 8</footer>
+  </group>
+</list>
