@@ -1,0 +1,128 @@
+<list>
+  <contact>
+    <email>email1_0@mail.ru</email>
+    <email2>email2_0@mail.ru</email2>
+    <email3>email3_0@mail.ru</email3>
+    <firstname>firstname 0</firstname>
+    <middlename>middletname 0</middlename>
+    <lastname>lastname 0</lastname>
+    <nickname>nickname 0</nickname>
+    <company>company</company>
+    <address>Address0</address>
+    <homephone>89317768890</homephone>
+    <mobile>89317768880</mobile>
+    <work>89317768900</work>
+  </contact>
+  <contact>
+    <email>email1_1@mail.ru</email>
+    <email2>email2_1@mail.ru</email2>
+    <email3>email3_1@mail.ru</email3>
+    <firstname>firstname 1</firstname>
+    <middlename>middletname 1</middlename>
+    <lastname>lastname 1</lastname>
+    <nickname>nickname 1</nickname>
+    <company>company</company>
+    <address>Address1</address>
+    <homephone>89317768891</homephone>
+    <mobile>89317768881</mobile>
+    <work>89317768901</work>
+  </contact>
+  <contact>
+    <email>email1_2@mail.ru</email>
+    <email2>email2_2@mail.ru</email2>
+    <email3>email3_2@mail.ru</email3>
+    <firstname>firstname 2</firstname>
+    <middlename>middletname 2</middlename>
+    <lastname>lastname 2</lastname>
+    <nickname>nickname 2</nickname>
+    <company>company</company>
+    <address>Address2</address>
+    <homephone>89317768892</homephone>
+    <mobile>89317768882</mobile>
+    <work>89317768902</work>
+  </contact>
+  <contact>
+    <email>email1_3@mail.ru</email>
+    <email2>email2_3@mail.ru</email2>
+    <email3>email3_3@mail.ru</email3>
+    <firstname>firstname 3</firstname>
+    <middlename>middletname 3</middlename>
+    <lastname>lastname 3</lastname>
+    <nickname>nickname 3</nickname>
+    <company>company</company>
+    <address>Address3</address>
+    <homephone>89317768893</homephone>
+    <mobile>89317768883</mobile>
+    <work>89317768903</work>
+  </contact>
+  <contact>
+    <email>email1_4@mail.ru</email>
+    <email2>email2_4@mail.ru</email2>
+    <email3>email3_4@mail.ru</email3>
+    <firstname>firstname 4</firstname>
+    <middlename>middletname 4</middlename>
+    <lastname>lastname 4</lastname>
+    <nickname>nickname 4</nickname>
+    <company>company</company>
+    <address>Address4</address>
+    <homephone>89317768894</homephone>
+    <mobile>89317768884</mobile>
+    <work>89317768904</work>
+  </contact>
+  <contact>
+    <email>email1_5@mail.ru</email>
+    <email2>email2_5@mail.ru</email2>
+    <email3>email3_5@mail.ru</email3>
+    <firstname>firstname 5</firstname>
+    <middlename>middletname 5</middlename>
+    <lastname>lastname 5</lastname>
+    <nickname>nickname 5</nickname>
+    <company>company</company>
+    <address>Address5</address>
+    <homephone>89317768895</homephone>
+    <mobile>89317768885</mobile>
+    <work>89317768905</work>
+  </contact>
+  <contact>
+    <email>email1_6@mail.ru</email>
+    <email2>email2_6@mail.ru</email2>
+    <email3>email3_6@mail.ru</email3>
+    <firstname>firstname 6</firstname>
+    <middlename>middletname 6</middlename>
+    <lastname>lastname 6</lastname>
+    <nickname>nickname 6</nickname>
+    <company>company</company>
+    <address>Address6</address>
+    <homephone>89317768896</homephone>
+    <mobile>89317768886</mobile>
+    <work>89317768906</work>
+  </contact>
+  <contact>
+    <email>email1_7@mail.ru</email>
+    <email2>email2_7@mail.ru</email2>
+    <email3>email3_7@mail.ru</email3>
+    <firstname>firstname 7</firstname>
+    <middlename>middletname 7</middlename>
+    <lastname>lastname 7</lastname>
+    <nickname>nickname 7</nickname>
+    <company>company</company>
+    <address>Address7</address>
+    <homephone>89317768897</homephone>
+    <mobile>89317768887</mobile>
+    <work>89317768907</work>
+  </contact>
+  <contact>
+    <email>email1_8@mail.ru</email>
+    <email2>email2_8@mail.ru</email2>
+    <email3>email3_8@mail.ru</email3>
+    <firstname>firstname 8</firstname>
+    <middlename>middletname 8</middlename>
+    <lastname>lastname 8</lastname>
+    <nickname>nickname 8</nickname>
+    <company>company</company>
+    <address>Address8</address>
+    <homephone>89317768898</homephone>
+    <mobile>89317768888</mobile>
+    <work>89317768908</work>
+  </contact>
+</list>
