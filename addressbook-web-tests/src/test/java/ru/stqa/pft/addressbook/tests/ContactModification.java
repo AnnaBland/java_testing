@@ -6,9 +6,9 @@ import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
 
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.testng.Assert.assertEquals;
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.*;
+
 
 
 public class ContactModification extends TestBase {
@@ -16,27 +16,29 @@ public class ContactModification extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditions(){
-        app.goTo().homePage();
-        if (app.contact().all().size()==0){
+        if (app.db().contacts().size() == 0){
+            app.goTo().homePage();
             app.contact().create(new ContactData()
                     .withEmail("creat1@test.ru").withFirstname("Testr1").withMiddlename("Testri").withLastname("trtt").withNickname("Testi").withCompany("Test").
                             withAddress("Test").withHomephone("98643567").withMobile("8944556632").withWork("Test1").withGroup("Test1"), true);
         }
     }
 
+
+
     @Test()
     public void testContactModification()  {
 
-        Contacts before = app.contact().all();
+        Contacts before = app.db().contacts();
         ContactData modifiedContact = before.iterator().next();
         ContactData contact = new ContactData().withId(modifiedContact.getId()).
-                withEmail("tr@test.ru").withFirstname("Testrw").withMiddlename("Testrw").withLastname("wwww").withNickname("Testi").withCompany("Test").
+                withEmail("tr@test.ru").withFirstname("Testrw123").withMiddlename("Testrw").withLastname("wwww").withNickname("Testi").withCompany("Test").
                 withAddress("Test").withHomephone("98643567").withMobile("8944556632").withWork("Test1").withGroup(null);
-        app.contact().modify(contact);
         app.goTo().homePage();
-        assertEquals(app.contact().count(), before.size());
-        Contacts after = app.contact().all();
-        assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
+        app.contact().modify(contact);
+       assertThat(app.contact().count(), equalTo(before.size()));
+        Contacts after = app.db().contacts();
+        assertThat(after, equalTo(before.withAdded(contact).without(modifiedContact)));
 
     }
 

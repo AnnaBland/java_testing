@@ -18,6 +18,7 @@ public class GroupData {
     @Expose
     @Column (name = "group_name")
     private  String name;
+
     @Id
     @Column (name = "group_id")
     @XStreamOmitField

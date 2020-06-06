@@ -8,7 +8,7 @@ import org.hibernate.annotations.Type;
 import javax.persistence.*;
 
 import java.io.File;
-import java.util.Objects;
+
 
 @XStreamAlias("contact")
 @Entity
@@ -18,6 +18,7 @@ public class ContactData {
     @Id
     @Column(name = "id")
     private int id = Integer.MAX_VALUE;
+
     @Expose
     @Column(name = "email")
     @Type(type="text")
@@ -82,6 +83,8 @@ public class ContactData {
     public File getPhoto () {
         return new File (photo);
     }
+
+
 
     public ContactData withId(int id) {
         this.id = id;
@@ -227,21 +230,6 @@ public class ContactData {
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ContactData that = (ContactData) o;
-        return id == that.id &&
-                Objects.equals(firstname, that.firstname) &&
-                Objects.equals(lastname, that.lastname);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, firstname, lastname);
     }
 
 

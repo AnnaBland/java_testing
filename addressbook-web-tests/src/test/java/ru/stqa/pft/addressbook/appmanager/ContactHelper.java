@@ -36,7 +36,7 @@ public class ContactHelper extends HelperBase{
         type(By.name("email"),contactData.getEmail());
         type(By.name("email2"),contactData.getEmail2());
         type(By.name("email3"),contactData.getEmail3());
-        attach(By.name("photo"),contactData.getPhoto());
+//        attach(By.name("photo"),contactData.getPhoto());
 
         if (creation){
             new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
@@ -56,6 +56,13 @@ public class ContactHelper extends HelperBase{
 
     public void selectById(int id) {
         wd.findElement(By.cssSelector("input[id='" + id+"']")).click();
+    }
+
+    public void gotoHomePage() {
+        if (isElementPresent(By.id("maintable"))) {
+            return;
+        }
+        wd.findElement(By.linkText("home")).click();
     }
 
     public void delete() {
@@ -92,6 +99,7 @@ public class ContactHelper extends HelperBase{
         fillForm(contact,false);
         submitModify();
         contactCahce = null;
+        gotoHomePage();
     }
     public void initModificationById(int id)  {
         wd.findElement (By.xpath(String.format("//a[@href='edit.php?id=%s']",id))).click();
