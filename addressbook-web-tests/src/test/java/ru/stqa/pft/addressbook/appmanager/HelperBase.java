@@ -58,4 +58,10 @@ public class HelperBase {
             return false;
         }
     }
+
+    protected void dropDownClick(String locator) {
+        if (!wd.findElement(By.xpath(locator)).isSelected()) {
+            click(By.xpath(locator));
+        }
+    }
 }
