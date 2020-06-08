@@ -6,7 +6,7 @@ import com.google.gson.reflect.TypeToken;
 import org.testng.annotations.*;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
-import ru.stqa.pft.addressbook.model.GroupData;
+import ru.stqa.pft.addressbook.model.Groups;
 
 
 import java.io.BufferedReader;
@@ -39,7 +39,12 @@ public class AddNewContactTests extends TestBase {
   }
 
   @Test (dataProvider = "validContact")
-  public void testAddNewContact(ContactData contact)  {
+  public void testAddNewContact(ContactData contact) throws Exception {
+    Groups groups = app.db().groups();
+    contact.inGroup(groups.iterator().next());
+
+
+
     Contacts before = app.db().contacts();
     app.goTo().homePage();
     //File photo = new File("src/test/resources/s1200.png");

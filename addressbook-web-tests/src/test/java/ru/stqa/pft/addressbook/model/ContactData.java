@@ -8,6 +8,9 @@ import org.hibernate.annotations.Type;
 import javax.persistence.*;
 
 import java.io.File;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
 
 
 @XStreamAlias("contact")
@@ -61,9 +64,7 @@ public class ContactData {
     @Column(name = "work")
     @Type(type="text")
     private String work;
-    @Expose
-    @Transient
-    private String group;
+
     @Expose
     @Transient
     private String allPhones;
@@ -75,6 +76,10 @@ public class ContactData {
     @Type(type="text")
     private String photo;
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "address_in_groups", joinColumns = @JoinColumn(name= "id"), inverseJoinColumns = @JoinColumn (name = "group_id"))
+    private Set<GroupData> groups = new HashSet<GroupData>();
+
     public ContactData withPhoto(File photo) {
         this.photo = photo.getPath();
         return this;
@@ -83,7 +88,6 @@ public class ContactData {
     public File getPhoto () {
         return new File (photo);
     }
-
 
 
     public ContactData withId(int id) {
@@ -151,10 +155,7 @@ public class ContactData {
         return this;
     }
 
-    public ContactData withGroup(String group) {
-        this.group = group;
-        return this;
-    }
+
 
     public ContactData withAllPhones(String allPhones) {
         this.allPhones = allPhones;
@@ -202,9 +203,10 @@ public class ContactData {
         return work;
     }
 
-    public String getGroup() {
-        return group;
+    public Groups getGroups() {
+        return new Groups(groups);
     }
+
 
     public int getId() {
         return id;
@@ -233,4 +235,23 @@ public class ContactData {
     }
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ContactData that = (ContactData) o;
+        return id == that.id &&
+                Objects.equals(firstname, that.firstname) &&
+                Objects.equals(lastname, that.lastname);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstname, lastname);
+    }
+
+    public ContactData inGroup(GroupData group) {
+        groups.add(group);
+        return this;
+    }
 }

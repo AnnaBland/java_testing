@@ -1,6 +1,7 @@
 package ru.stqa.pft.addressbook.appmanager;
 
 
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.By;
@@ -23,25 +24,32 @@ public class ContactHelper extends HelperBase{
         click(By.xpath("(//input[@name='submit'])[2]"));
     }
 
-    public void fillForm(ContactData contactData, boolean creation ) {
-        type(By.name("firstname"),contactData.getFirstname());
-        type(By.name("middlename"),contactData.getMiddlename());
-        type(By.name("lastname"),contactData.getLastname());
-        type(By.name("nickname"),contactData.getNickname());
-        type(By.name("company"),contactData.getCompany());
-        type(By.name("address"),contactData.getAddress());
-        type(By.name("home"),contactData.getHomePhone());
-        type(By.name("mobile"),contactData.getMobile());
-        type(By.name("work"),contactData.getWork());
-        type(By.name("email"),contactData.getEmail());
-        type(By.name("email2"),contactData.getEmail2());
-        type(By.name("email3"),contactData.getEmail3());
-//        attach(By.name("photo"),contactData.getPhoto());
+    public void fillForm(ContactData contactData, boolean creation ) throws Exception {
+        type(By.name("firstname"), contactData.getFirstname());
+        type(By.name("middlename"), contactData.getMiddlename());
+        type(By.name("lastname"), contactData.getLastname());
+        type(By.name("nickname"), contactData.getNickname());
+        type(By.name("company"), contactData.getCompany());
+        type(By.name("address"), contactData.getAddress());
+        type(By.name("home"), contactData.getHomePhone());
+        type(By.name("mobile"), contactData.getMobile());
+        type(By.name("work"), contactData.getWork());
+        type(By.name("email"), contactData.getEmail());
+        type(By.name("email2"), contactData.getEmail2());
+        type(By.name("email3"), contactData.getEmail3());
+        try {
+            attach(By.name("photo"),contactData.getPhoto());
+        } catch (NullPointerException ex){
+        }
 
-        if (creation){
-            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
-    }  else {
-            Assert.assertFalse(isElementPresent(By.name("new_group")));
+
+        if (creation) {
+            if (contactData.getGroups().size() > 0) {
+                Assert.assertTrue(contactData.getGroups().size() == 1);
+                new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroups().iterator().next().getName());
+            } else {
+                Assert.assertFalse(isElementPresent(By.name("new_group")));
+            }
         }
     }
 
@@ -86,7 +94,7 @@ public class ContactHelper extends HelperBase{
         click(By.name("update"));
     }
 
-    public void create (ContactData contact, boolean b) {
+    public void create (ContactData contact, boolean b) throws Exception{
         addNewContact();
        fillForm(contact, b);
         submitAddNewContact();
@@ -94,7 +102,7 @@ public class ContactHelper extends HelperBase{
 
     }
 
-    public void modify(ContactData contact)  {
+    public void modify(ContactData contact) throws Exception {
         initModificationById(contact.getId());
         fillForm(contact,false);
         submitModify();
