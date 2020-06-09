@@ -37,5 +37,14 @@ public class Groups  extends ForwardingSet <GroupData>{
         groups.remove(group);
         return groups;
     }
+
+
+    public Groups without(Groups groupsRm){
+        Groups groups = new Groups(this);
+        for (GroupData group : groupsRm) {
+            groups.remove(group);
+        }
+        return groups;
+    }
 }
 

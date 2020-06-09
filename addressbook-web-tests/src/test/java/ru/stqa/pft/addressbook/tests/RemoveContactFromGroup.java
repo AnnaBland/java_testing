@@ -7,65 +7,38 @@ import ru.stqa.pft.addressbook.model.Contacts;
 import ru.stqa.pft.addressbook.model.GroupData;
 import ru.stqa.pft.addressbook.model.Groups;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class RemoveContactFromGroup extends TestBase {
 
     @BeforeMethod
-    public void ensurePreconditions() throws  Exception{
-        if (app.db().groups().size() == 0){
+    public void ensurePreconditions() throws  Exception {
+        if (app.db().groups().size() == 0) {
             app.goTo().groupPage();
             app.group().create(new GroupData().withName("Precond"));
         }
-        if (app.db().contacts().size() == 0){
+        if (app.db().contacts().size() == 0) {
             app.goTo().homePage();
             app.contact().create(new ContactData()
                     .withEmail("creat1@test.ru").withFirstname("Testr1").withMiddlename("Testri").withLastname("trtt").withNickname("Testi").withCompany("Test").
                             withAddress("Test").withHomephone("98643567").withMobile("8944556632").withWork("Test1"), true);
         }
 
-
     }
 
     @Test
     public void testRemoveContactFromGroup() {
-        Contacts contactsBefore = app.db().contacts();
-        Groups groupsBefore = app.db().groups();
-        ContactData contactForRemove = null;
-        GroupData targetGroup = null;
-
-
-        for (ContactData contact : contactsBefore) {
-            Groups contactGroups = contact.getGroups();
-            if (contactGroups.size() > 0) {
-                contactForRemove = contact;
-                targetGroup = contactForRemove.getGroups().iterator().next();
-                break;
-            } else {
-                app.goTo().homePage();
-                GroupData group = groupsBefore.iterator().next();
-                app.contact().addToGroup(contact.getId(), contact, group);
+            Contacts contacts = app.db().contacts();
+            Groups groups = app.db().groups();
+            if (!contacts.stream().filter((s) -> (s.getGroups().size() > 0)).findAny().isPresent()) {
+                app.contact().addToGroup(groups.iterator().next(), contacts.iterator().next());
             }
-        }
-
-        for (ContactData contact : contactsBefore) {
-            Groups contactGroups = contact.getGroups();
-            for (GroupData group : groupsBefore) {
-                if (contactGroups.contains(group)) {
-                    targetGroup = group;
-                    contactForRemove = contact;
-                    break;
-                }
-            }
-        }
-
-        app.goTo().homePage();
-        app.contact().removeFromGroup(contactForRemove, targetGroup);
-        verifyContactListInUI();
-
-
+            ContactData removedContact = app.db().contacts().stream().filter((s) -> (s.getGroups().size() > 0)).findAny().get();
+            Groups before = removedContact.getGroups();
+            GroupData modifiedGroup = before.iterator().next();
+            app.contact().removeFromGroup(modifiedGroup, removedContact);
+            Groups after = app.db().contacts().stream().filter((s) -> s.equals(removedContact)).findFirst().get().getGroups();;
+            assertThat(after, equalTo(before.without(modifiedGroup)));
     }
-
-
-
-
 }

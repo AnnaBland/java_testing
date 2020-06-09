@@ -8,6 +8,10 @@ import ru.stqa.pft.addressbook.model.Contacts;
 import ru.stqa.pft.addressbook.model.GroupData;
 import ru.stqa.pft.addressbook.model.Groups;
 
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 public class AddContactToGroup extends TestBase{
 
     @BeforeMethod
@@ -27,35 +31,19 @@ public class AddContactToGroup extends TestBase{
     }
 
     @Test
-    public void testAddContactToGroup()  {
-        {
-            app.goTo().homePage();
-            Contacts beforeContacts = app.db().contacts();
-            ContactData contact = beforeContacts.iterator().next();
-            Groups addedGroups = contact.getGroups();
-            Groups beforeGroups = app.db().groups();
-            Groups withoutAdded = new Groups();
-
-
-            if (beforeGroups == addedGroups) {
-                app.goTo().groupPage();
-                GroupData newGroup = new GroupData().withName("new_group");
-                app.group().create(newGroup);
-                beforeGroups = app.db().groups();
-
-            }
-            for (GroupData group : beforeGroups)  {
-                if (!addedGroups.contains(group)) {
-                    withoutAdded.add(group);
-                }
-            }
-
-            GroupData group = withoutAdded.iterator().next();
-            app.contact().addToGroup(contact.getId(), contact, group);
-            app.contact().gotoHomePage();
-
-            verifyContactListInUI();
+    public void testAddContactToGroup() throws Exception {
+        Contacts contacts = app.db().contacts();
+        Groups groups = app.db().groups();
+        if (!contacts.stream().filter((s) -> (s.getGroups().size() < groups.size())).findAny().isPresent()) {
+            app.contact().create(new ContactData().withFirstname("Testn").withLastname("Testn"), true);
         }
+        ContactData addedContact =
+                app.db().contacts().stream().filter((s) -> (s.getGroups().size() < groups.size())).findAny().get();
+        Groups before = addedContact.getGroups();
+        GroupData group = groups.without(addedContact.getGroups()).iterator().next();
+        app.contact().addToGroup( group, addedContact);
+        Groups after = app.db().contacts().stream().filter((s) -> s.equals(addedContact)).findFirst().get().getGroups();
+        assertThat(after, equalTo(before.withAdded(group)));
 
 
 }

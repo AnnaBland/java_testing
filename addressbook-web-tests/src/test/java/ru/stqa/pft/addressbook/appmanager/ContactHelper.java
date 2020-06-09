@@ -164,14 +164,14 @@ public class ContactHelper extends HelperBase{
                 .withEmail(email).withEmail2(email2).withEmail3(email3).withAddress(address);
     }
 
-    public void addToGroup(int id, ContactData contact, GroupData group) {
+    public void addToGroup( GroupData group, ContactData contact) {
         selectById(contact.getId());
         new Select(wd.findElement(By.name("to_group"))).selectByVisibleText(group.getName());
         click(By.name("add"));
     }
 
 
-    public void removeFromGroup(ContactData contact, GroupData group) {
+    public void removeFromGroup(GroupData group, ContactData contact) {
         new Select(wd.findElement(By.name("group"))).selectByVisibleText(group.getName());
         selectById(contact.getId());
         click(By.name("remove"));
