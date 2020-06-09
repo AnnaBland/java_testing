@@ -38,7 +38,6 @@ public class Groups  extends ForwardingSet <GroupData>{
         return groups;
     }
 
-
     public Groups without(Groups groupsRm){
         Groups groups = new Groups(this);
         for (GroupData group : groupsRm) {

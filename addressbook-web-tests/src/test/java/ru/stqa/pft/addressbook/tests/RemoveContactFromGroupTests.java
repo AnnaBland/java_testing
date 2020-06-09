@@ -10,7 +10,7 @@ import ru.stqa.pft.addressbook.model.Groups;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class RemoveContactFromGroup extends TestBase {
+public class RemoveContactFromGroupTests extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditions() throws  Exception {
@@ -24,11 +24,10 @@ public class RemoveContactFromGroup extends TestBase {
                     .withEmail("creat1@test.ru").withFirstname("Testr1").withMiddlename("Testri").withLastname("trtt").withNickname("Testi").withCompany("Test").
                             withAddress("Test").withHomephone("98643567").withMobile("8944556632").withWork("Test1"), true);
         }
-
     }
 
     @Test
-    public void testRemoveContactFromGroup() {
+    public void testRemoveContactFromGroupTests() {
             Contacts contacts = app.db().contacts();
             Groups groups = app.db().groups();
             if (!contacts.stream().filter((s) -> (s.getGroups().size() > 0)).findAny().isPresent()) {
