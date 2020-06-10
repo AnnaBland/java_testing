@@ -18,6 +18,8 @@ public class ApplicationManager {
 
     WebDriver wd;
 
+    private String browser;
+
 
     public ApplicationManager(String browser)  {
         this.browser = browser;
@@ -48,6 +50,15 @@ public class ApplicationManager {
     public void stop() {
         wd.findElement(By.linkText("Logout")).click();
         wd.quit();
+    }
+
+    public HttpSession newSession() {
+        return new HttpSession(this);
+
+    }
+
+    public String getProperty(String key) {
+        return properties.getProperty(key);
     }
 
 
