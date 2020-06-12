@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">9.509s</div>
+<div class="counter">39.991s</div>
 <p>duration</p>
 </div>
 </td>
@@ -82,7 +82,7 @@
 </thead>
 <tr>
 <td class="success">testRegistration</td>
-<td class="success">9.509s</td>
+<td class="success">39.991s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -90,71 +90,31 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>14:15:38.465 [Test worker] DEBUG o.s.smtp.server.CommandHandler - Added command: AUTH
-14:15:38.477 [Test worker] DEBUG o.s.smtp.server.CommandHandler - Added command: DATA
-14:15:38.478 [Test worker] DEBUG o.s.smtp.server.CommandHandler - Added command: EHLO
-14:15:38.478 [Test worker] DEBUG o.s.smtp.server.CommandHandler - Added command: HELO
-14:15:38.478 [Test worker] DEBUG o.s.smtp.server.CommandHandler - Added command: HELP
-14:15:38.479 [Test worker] DEBUG o.s.smtp.server.CommandHandler - Added command: MAIL
-14:15:38.479 [Test worker] DEBUG o.s.smtp.server.CommandHandler - Added command: NOOP
-14:15:38.479 [Test worker] DEBUG o.s.smtp.server.CommandHandler - Added command: QUIT
-14:15:38.479 [Test worker] DEBUG o.s.smtp.server.CommandHandler - Added command: RCPT
-14:15:38.479 [Test worker] DEBUG o.s.smtp.server.CommandHandler - Added command: RSET
-14:15:38.480 [Test worker] DEBUG o.s.smtp.server.CommandHandler - Added command: STARTTLS
-14:15:38.480 [Test worker] DEBUG o.s.smtp.server.CommandHandler - Added command: VRFY
-14:15:38.480 [Test worker] INFO  o.subethamail.smtp.server.SMTPServer - SMTP server *:25 starting
-14:15:38.488 [org.subethamail.smtp.server.ServerThread *:25] INFO  o.s.smtp.server.ServerThread - SMTP server *:25 started
-14:15:45.423 [org.subethamail.smtp.server.Session-/127.0.0.1:52830] DEBUG org.subethamail.smtp.server.Session - SMTP connection from 127.0.0.1/127.0.0.1, new connection count: 1
-14:15:45.424 [org.subethamail.smtp.server.Session-/127.0.0.1:52830] DEBUG org.subethamail.smtp.server.Session - Server: 220 LAPTOP-9JV1292F ESMTP SubEthaSMTP 3.1.7
-14:15:45.425 [org.subethamail.smtp.server.Session-/127.0.0.1:52830] DEBUG org.subethamail.smtp.server.Session - Client: HELO LAPTOP-9JV1292F
-14:15:45.429 [org.subethamail.smtp.server.Session-/127.0.0.1:52830] DEBUG org.subethamail.smtp.server.Session - Server: 250 LAPTOP-9JV1292F
-14:15:45.429 [org.subethamail.smtp.server.Session-/127.0.0.1:52830] DEBUG org.subethamail.smtp.server.Session - Client: MAIL FROM:&lt;admin@example.com&gt;
-14:15:45.434 [org.subethamail.smtp.server.Session-/127.0.0.1:52830] DEBUG org.subethamail.smtp.server.Session - Server: 250 Ok
-14:15:45.435 [org.subethamail.smtp.server.Session-/127.0.0.1:52830] DEBUG org.subethamail.smtp.server.Session - Client: RCPT TO:&lt;user1591960538489@localhost.localdomain&gt;
-14:15:45.435 [org.subethamail.smtp.server.Session-/127.0.0.1:52830] DEBUG org.subethamail.wiser.Wiser - Accepting mail from admin@example.com to user1591960538489@localhost.localdomain
-14:15:45.436 [org.subethamail.smtp.server.Session-/127.0.0.1:52830] DEBUG org.subethamail.smtp.server.Session - Server: 250 Ok
-14:15:45.436 [org.subethamail.smtp.server.Session-/127.0.0.1:52830] DEBUG org.subethamail.smtp.server.Session - Client: DATA
-14:15:45.436 [org.subethamail.smtp.server.Session-/127.0.0.1:52830] DEBUG org.subethamail.smtp.server.Session - Server: 354 End data with &lt;CR&gt;&lt;LF&gt;.&lt;CR&gt;&lt;LF&gt;
-14:15:45.443 [org.subethamail.smtp.server.Session-/127.0.0.1:52830] DEBUG org.subethamail.wiser.Wiser - Delivering mail from admin@example.com to user1591960538489@localhost.localdomain
-14:15:45.444 [org.subethamail.smtp.server.Session-/127.0.0.1:52830] DEBUG org.subethamail.wiser.Wiser - Creating message from data with 1221 bytes
-14:15:45.445 [org.subethamail.smtp.server.Session-/127.0.0.1:52830] DEBUG org.subethamail.smtp.server.Session - Server: 250 Ok
-14:15:45.445 [org.subethamail.smtp.server.Session-/127.0.0.1:52830] DEBUG org.subethamail.smtp.server.Session - Client: QUIT
-14:15:45.445 [org.subethamail.smtp.server.Session-/127.0.0.1:52830] DEBUG org.subethamail.smtp.server.Session - Server: 221 Bye
-14:15:45.451 [org.subethamail.smtp.server.Session-/127.0.0.1:52831] DEBUG org.subethamail.smtp.server.Session - SMTP connection from 127.0.0.1/127.0.0.1, new connection count: 1
-14:15:45.451 [org.subethamail.smtp.server.Session-/127.0.0.1:52831] DEBUG org.subethamail.smtp.server.Session - Server: 220 LAPTOP-9JV1292F ESMTP SubEthaSMTP 3.1.7
-14:15:45.452 [org.subethamail.smtp.server.Session-/127.0.0.1:52831] DEBUG org.subethamail.smtp.server.Session - Client: HELO LAPTOP-9JV1292F
-14:15:45.452 [org.subethamail.smtp.server.Session-/127.0.0.1:52831] DEBUG org.subethamail.smtp.server.Session - Server: 250 LAPTOP-9JV1292F
-14:15:45.452 [org.subethamail.smtp.server.Session-/127.0.0.1:52831] DEBUG org.subethamail.smtp.server.Session - Client: MAIL FROM:&lt;admin@example.com&gt;
-14:15:45.453 [org.subethamail.smtp.server.Session-/127.0.0.1:52831] DEBUG org.subethamail.smtp.server.Session - Server: 250 Ok
-14:15:45.453 [org.subethamail.smtp.server.Session-/127.0.0.1:52831] DEBUG org.subethamail.smtp.server.Session - Client: RCPT TO:&lt;root@localhost&gt;
-14:15:45.453 [org.subethamail.smtp.server.Session-/127.0.0.1:52831] DEBUG org.subethamail.wiser.Wiser - Accepting mail from admin@example.com to root@localhost
-14:15:45.454 [org.subethamail.smtp.server.Session-/127.0.0.1:52831] DEBUG org.subethamail.smtp.server.Session - Server: 250 Ok
-14:15:45.454 [org.subethamail.smtp.server.Session-/127.0.0.1:52831] DEBUG org.subethamail.smtp.server.Session - Client: DATA
-14:15:45.454 [org.subethamail.smtp.server.Session-/127.0.0.1:52831] DEBUG org.subethamail.smtp.server.Session - Server: 354 End data with &lt;CR&gt;&lt;LF&gt;.&lt;CR&gt;&lt;LF&gt;
-14:15:45.455 [org.subethamail.smtp.server.Session-/127.0.0.1:52831] DEBUG org.subethamail.wiser.Wiser - Delivering mail from admin@example.com to root@localhost
-14:15:45.456 [org.subethamail.smtp.server.Session-/127.0.0.1:52831] DEBUG org.subethamail.wiser.Wiser - Creating message from data with 870 bytes
-14:15:45.456 [org.subethamail.smtp.server.Session-/127.0.0.1:52831] DEBUG org.subethamail.smtp.server.Session - Server: 250 Ok
-14:15:45.457 [org.subethamail.smtp.server.Session-/127.0.0.1:52831] DEBUG org.subethamail.smtp.server.Session - Client: QUIT
-14:15:45.457 [org.subethamail.smtp.server.Session-/127.0.0.1:52831] DEBUG org.subethamail.smtp.server.Session - Server: 221 Bye
-14:15:47.999 [Test worker] INFO  o.subethamail.smtp.server.SMTPServer - SMTP server *:25 stopping
-14:15:48.000 [Test worker] DEBUG o.s.smtp.server.ServerThread - SMTP Server socket shut down
-14:15:48.000 [org.subethamail.smtp.server.ServerThread *:25] INFO  o.s.smtp.server.ServerThread - SMTP server *:25 stopped
+<pre>JAMES Remote Administration Tool 2.3.1
+Please enter your login and password
+Login id:root
+
+Password:root
+
+Welcome root. HELP for a list of commandsadduser user1591962140593 password
+
+User user1591962140593 addedquit
 </pre>
 </span>
 </div>
 <div id="tab2" class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>1591960539889	mozrunner::runner	INFO	Running command: &quot;C:\\Program Files\\Mozilla Firefox\\firefox.exe&quot; &quot;-marionette&quot; &quot;-foreground&quot; &quot;-no-remote&quot; &quot;-profile&quot; &quot;C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofile7GoyD0&quot;
-1591960540389	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
-1591960540981	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
-1591960540981	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
-1591960540981	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
-1591960540981	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+<pre>1591962141952	mozrunner::runner	INFO	Running command: &quot;C:\\Program Files\\Mozilla Firefox\\firefox.exe&quot; &quot;-marionette&quot; &quot;-foreground&quot; &quot;-no-remote&quot; &quot;-profile&quot; &quot;C:\\Users\\Asus\\AppData\\Local\\Temp\\rust_mozprofileGZv8fh&quot;
+1591962142422	addons.webextension.doh-rollout@mozilla.org	WARN	Loading extension 'doh-rollout@mozilla.org': Reading manifest: Invalid extension permission: networkStatus
+1591962142976	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1591962142976	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1591962142976	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1591962142976	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
 JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
-1591960542969	Marionette	INFO	Listening on port 52783
-1591960543056	Marionette	WARN	TLS certificate errors will be ignored for this session
-июн 12, 2020 2:15:43 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+1591962144903	Marionette	INFO	Listening on port 53458
+1591962145128	Marionette	WARN	TLS certificate errors will be ignored for this session
+июн 12, 2020 2:42:25 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 </pre>
 </span>
@@ -167,7 +127,7 @@ INFO: Detected dialect: W3C
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 6.3</a> at 12.06.2020 14:15:49</p>
+<a href="http://www.gradle.org">Gradle 6.3</a> at 12.06.2020 14:43:02</p>
 </div>
 </div>
 </body>
