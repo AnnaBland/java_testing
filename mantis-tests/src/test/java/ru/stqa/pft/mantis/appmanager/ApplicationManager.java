@@ -23,6 +23,7 @@ public class ApplicationManager {
     private FtpHelper ftp;
     private MailHelper mailHelper;
     private JamesHelper jamesHelper;
+    private DbHelper dbHelper;
 
 
     public ApplicationManager(String browser)  {
@@ -37,6 +38,10 @@ public class ApplicationManager {
         properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties",target))));
 
 
+    }
+
+    public DbHelper db() {
+        return dbHelper;
     }
 
     public void stop() {
