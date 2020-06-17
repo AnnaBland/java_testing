@@ -28,6 +28,10 @@ mantis-tests/build/tmp/test/jar_extract_384681306752459759_tmp
 mantis-tests/build/tmp/test/jar_extract_8441886504424802401_tmp
 mantis-tests/build/tmp/test/jar_extract_5576770482312117356_tmp
 mantis-tests/build/tmp/test/jar_extract_8854633701965008715_tmp
+mantis-tests/build
 soap-sample/build
 soap-sample/build.gradle
 soap-sample/gradle
+*.bin
+*.idx
+mantis-tests/build/test-results/test/TEST-ru.stqa.pft.mantis.tests.SoapTests.xml
