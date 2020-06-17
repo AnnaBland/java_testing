@@ -32,6 +32,11 @@ mantis-tests/build
 soap-sample/build
 soap-sample/build.gradle
 soap-sample/gradle
+
+rest-sample/build
+rest-sample/build.gradle
+rest-sample/gradle
+
 *.bin
 *.idx
 mantis-tests/build/test-results/test/TEST-ru.stqa.pft.mantis.tests.SoapTests.xml
