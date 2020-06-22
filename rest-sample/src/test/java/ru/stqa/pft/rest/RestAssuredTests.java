@@ -31,7 +31,7 @@ public class RestAssuredTests extends TestBase{
         assertEquals(newIssues, oldIssues);
     }
 
-    private Set<Issue> getIssues() throws IOException {
+    public Set<Issue> getIssues() throws IOException {
 
         String json = RestAssured.get("https://bugify.stqa.ru/api/issues.json").asString();
 
@@ -40,7 +40,7 @@ public class RestAssuredTests extends TestBase{
         return new Gson().fromJson(issues, new TypeToken<Set<Issue>>() {}.getType());
     }
 
-    private int createIssue(Issue newIssue) throws IOException {
+    public int createIssue(Issue newIssue) throws IOException {
 
         String json = RestAssured.given()
                 .parameter("subject", newIssue.getSubject())
