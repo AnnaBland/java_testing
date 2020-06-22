@@ -13,12 +13,12 @@ import java.util.Set;
 
 import static org.testng.Assert.assertEquals;
 
-public class RestAssuredTests {
-
+public class RestAssuredTests extends TestBase{
     @BeforeClass
     public void init() {
-        RestAssured.authentication = RestAssured.basic("28accbe43ea112d9feb328d2c00b3eed", "");
+        RestAssured.authentication = RestAssured.basic("288f44776e7bec4bf44fdfeb1e646490", "");
     }
+
 
     @Test
     public void testCreateIssue() throws IOException {
@@ -33,7 +33,7 @@ public class RestAssuredTests {
 
     private Set<Issue> getIssues() throws IOException {
 
-        String json = RestAssured.get("http://demo.bugify.com/api/issues.json").asString();
+        String json = RestAssured.get("https://bugify.stqa.ru/api/issues.json").asString();
 
         JsonElement parsed = new JsonParser().parse(json);
         JsonElement issues = parsed.getAsJsonObject().get("issues");
@@ -45,7 +45,7 @@ public class RestAssuredTests {
         String json = RestAssured.given()
                 .parameter("subject", newIssue.getSubject())
                 .parameter("description", newIssue.getDescription())
-                .post("http://demo.bugify.com/api/issues.json").asString();
+                .post("https://bugify.stqa.ru/api/issues.json").asString();
 
         JsonElement parsed = new JsonParser().parse(json);
         return parsed.getAsJsonObject().get("issue_id").getAsInt();
