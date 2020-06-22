@@ -1,0 +1,16 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.testng:testng:7.1.0'
+    implementation 'com.jcabi:jcabi-github:1.1.2'
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
+    
+}
+
+test {
+    useTestNG()
+}
