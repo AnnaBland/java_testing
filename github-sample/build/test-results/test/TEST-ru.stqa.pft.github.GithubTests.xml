@@ -1,198 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.github.GithubTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-06-22T13:40:52" hostname="LAPTOP-9JV1292F" time="38.712">
+<testsuite name="ru.stqa.pft.github.GithubTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-06-22T15:54:52" hostname="LAPTOP-9JV1292F" time="1.31">
   <properties/>
-  <testcase name="testCommits" classname="ru.stqa.pft.github.GithubTests" time="38.712"/>
-  <system-out><![CDATA[16:40:54.812 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits): [200 OK] in 1s
-16:40:55.198 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/c2557d80715f406f93c4db934ef13ca24283bc5a): [200 OK] in 310ms
-Update RestAssuredTests.java
-16:40:55.576 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/04788a60c9df91fd82fd3bb05b96a157d245bf75): [200 OK] in 372ms
-Task20
-16:40:55.924 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/a7b7f267f4440688915f662f5268d26b3d9ba174): [200 OK] in 342ms
-Added RestAssuredTests
-16:40:56.319 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/4c4a5d5cf70b5867fbcf46f33ac0f26576a68961): [200 OK] in 391ms
-Added rest-sample
-16:40:56.700 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/f3670f844554f11fc138953a1473827874bdbde6): [200 OK] in 375ms
-Task 19
-16:40:57.107 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/44af0fe3ca8f20630e355bf36721d70c2e3ead5b): [200 OK] in 399ms
-soap-sample
-16:40:57.483 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/a4a5aaf2b13cfaabcda0244b24eedcd15bb8c055): [200 OK] in 367ms
-exclude admin
-16:40:57.896 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/688c4065f88cbb40e805e37152141b337e93e4ba): [200 OK] in 409ms
-Task 18
-16:40:58.414 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/d89fd29f46c9cc59211a0e5f28efa30faf65078e): [200 OK] in 504ms
-delete all
-16:40:58.898 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/0c21eae744d699d2c1bf0c4d24bb7be9dca8b02c): [200 OK] in 473ms
-delete test results
-16:40:59.348 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/298d9273da6871d52026f048666e749a4b7c0ba4): [200 OK] in 445ms
-Task 18
-16:40:59.992 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/97b13aae9bf3653c284dd4701828ef2c64b2ba41): [200 OK] in 621ms
-Lesson 8.7 send mails to external mail service
-16:41:00.433 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/77ff8abcd0d104e65ce0bfff80124f824eb5fa69): [200 OK] in 438ms
-Lesson 8.7
-16:41:00.825 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/5e7bb9c53f36da75e67338cf0c326d437e22b5e5): [200 OK] in 385ms
-Create LoginTests
-16:41:01.486 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/3f8c638cdd5c128d563ab90572aefacf20b96e7a): [200 OK] in 657ms
-Added  new module for Mantis tests
-16:41:01.884 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/725b2432047e7ac1d8daed9885f36eeeceaf3269): [200 OK] in 394ms
-Done Task16
+  <testcase name="testCommits" classname="ru.stqa.pft.github.GithubTests" time="1.31">
+    <failure message="java.lang.AssertionError: HTTP response status is not equal to 200:&#13;&#10;401 Unauthorized [https://api.github.com/repos/AnnaBland/java_testing/commits]&#10;Date: Mon, 22 Jun 2020 15:54:56 GMT&#10;Content-Type: application/json; charset=utf-8&#10;Content-Length: 83&#10;Server: GitHub.com&#10;Status: 401 Unauthorized&#10;X-GitHub-Media-Type: github.v3&#10;X-RateLimit-Limit: 60&#10;X-RateLimit-Remaining: 59&#10;X-RateLimit-Reset: 1592844896&#10;Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset&#10;Access-Control-Allow-Origin: *&#10;Strict-Transport-Security: max-age=31536000; includeSubdomains; preload&#10;X-Frame-Options: deny&#10;X-Content-Type-Options: nosniff&#10;X-XSS-Protection: 1; mode=block&#10;Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin&#10;Content-Security-Policy: default-src 'none'&#10;Vary: Accept-Encoding, Accept, X-Requested-With&#10;X-GitHub-Request-Id: E60C:B0F5:2DA7055:36BE4DB:5EF0D44F&#10;&#10;{&quot;message&quot;:&quot;Bad credentials&quot;,&quot;documentation_url&quot;:&quot;https://developer.github.com/v3&quot;}&#10;Expected: HTTP response with status 200&#10;     but: was &lt;401 Unauthorized [https://api.github.com/repos/AnnaBland/java_testing/commits]&#10;Date: Mon, 22 Jun 2020 15:54:56 GMT&#10;Content-Type: application/json; charset=utf-8&#10;Content-Length: 83&#10;Server: GitHub.com&#10;Status: 401 Unauthorized&#10;X-GitHub-Media-Type: github.v3&#10;X-RateLimit-Limit: 60&#10;X-RateLimit-Remaining: 59&#10;X-RateLimit-Reset: 1592844896&#10;Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset&#10;Access-Control-Allow-Origin: *&#10;Strict-Transport-Security: max-age=31536000; includeSubdomains; preload&#10;X-Frame-Options: deny&#10;X-Content-Type-Options: nosniff&#10;X-XSS-Protection: 1; mode=block&#10;Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin&#10;Content-Security-Policy: default-src 'none'&#10;Vary: Accept-Encoding, Accept, X-Requested-With&#10;X-GitHub-Request-Id: E60C:B0F5:2DA7055:36BE4DB:5EF0D44F&#10;&#10;{&quot;message&quot;:&quot;Bad credentials&quot;,&quot;documentation_url&quot;:&quot;https://developer.github.com/v3&quot;}&gt;" type="java.lang.AssertionError">java.lang.AssertionError: HTTP response status is not equal to 200:
+401 Unauthorized [https://api.github.com/repos/AnnaBland/java_testing/commits]
+Date: Mon, 22 Jun 2020 15:54:56 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 83
+Server: GitHub.com
+Status: 401 Unauthorized
+X-GitHub-Media-Type: github.v3
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 59
+X-RateLimit-Reset: 1592844896
+Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset
+Access-Control-Allow-Origin: *
+Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+X-Frame-Options: deny
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+Content-Security-Policy: default-src 'none'
+Vary: Accept-Encoding, Accept, X-Requested-With
+X-GitHub-Request-Id: E60C:B0F5:2DA7055:36BE4DB:5EF0D44F
 
-fix : not started RemoveContactFromGroupTests
-16:41:02.349 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/fedee12b384e815d89ee70b30048a85c45f02766): [200 OK] in 464ms
-Task 16
-16:41:02.768 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/fa39a962c774af70693705c1b91eec9f15ed3857): [200 OK] in 416ms
-Task 16
-16:41:03.144 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/78c48b94a9f9ca9cbfd6124aa0965de052affb52): [200 OK] in 374ms
-Added method verifyGroupListInUI
-16:41:03.503 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/8e5e44b30a4b82e4e126763a15602720a5448b11): [200 OK] in 357ms
-Added method equals in ContactData and error handling NullPointer
-16:41:04.209 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/a971f03d25dc67945deaf0b2dd5fbc1bf3e6ea6d): [200 OK] in 704ms
-Added uploading contacts from the database for tests
-16:41:04.838 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/d7b020c47b9a3f042d7b4f03c6c9768b730a6e51): [200 OK] in 627ms
-Added uploading groups from the database for Creation and Deletion groups tests
-16:41:05.252 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/d873a9a1b0d87ada360f5d3338769b3eab02a885): [200 OK] in 411ms
-Added uploading groups from the database for GroupModificationTests
-16:41:05.572 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/9be402c0743a00f5d7e719423bae1405d92e59c1): [200 OK] in 318ms
-Changed HbConnectionTest for ContactData
-16:41:05.951 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/bc296703f96a247ac33788b6904dca099e554d66): [200 OK] in 377ms
-Added  HbConnectionTest
+{&quot;message&quot;:&quot;Bad credentials&quot;,&quot;documentation_url&quot;:&quot;https://developer.github.com/v3&quot;}
+Expected: HTTP response with status 200
+     but: was &lt;401 Unauthorized [https://api.github.com/repos/AnnaBland/java_testing/commits]
+Date: Mon, 22 Jun 2020 15:54:56 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 83
+Server: GitHub.com
+Status: 401 Unauthorized
+X-GitHub-Media-Type: github.v3
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 59
+X-RateLimit-Reset: 1592844896
+Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset
+Access-Control-Allow-Origin: *
+Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+X-Frame-Options: deny
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+Content-Security-Policy: default-src 'none'
+Vary: Accept-Encoding, Accept, X-Requested-With
+X-GitHub-Request-Id: E60C:B0F5:2DA7055:36BE4DB:5EF0D44F
 
-ORM
-16:41:06.307 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/d121532c6e96b69c65708b32f7e612a8a351045d): [200 OK] in 354ms
-Added DbConnectionTest Ffor connect ro database
-
-Using SQL Query
-16:41:06.672 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/f8bb447369cc580f518babd1a1c8176f94aa0fc8): [200 OK] in 365ms
-Logging
-16:41:07.063 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/709806f24e3f142c99927055c3cebb69449eead6): [200 OK] in 388ms
-Add possible start execution tests from terminal with use config
-16:41:07.520 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/9ebf595756dcb0ade7986bede1bb1f9e6319a563): [200 OK] in 455ms
-Add possible take parametrs from json in AddNewContactTests
-16:41:07.935 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/e2c95bb2f6cc876a73fce6054716a8c2eb8ebe59): [200 OK] in 413ms
-Add data generators for contactData and groupData
-16:41:08.363 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repositories/256505031/commits): [200 OK] in 426ms
-16:41:08.727 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/88589731839308f58b781bff8ea5eecbd940cdaa): [200 OK] in 359ms
-Add possible read data from xml
-16:41:09.380 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/d39731896fd26ee074052d8fa559204801687984): [200 OK] in 649ms
-Add JCommander in GroupDateGenerator
-16:41:09.751 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/c00928f3b651870a2f87752d7c1aab9671400f65): [200 OK] in 369ms
-Add GroupDateGenerator
-16:41:10.138 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/c06ce347b76569c0d89b3e523f09cfb4137b605e): [200 OK] in 384ms
-Creation contact with photo
-16:41:10.475 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/9ebb962fccc71745545accc4a411bb7e2de7cc61): [200 OK] in 336ms
-Add tests ContactPhone, ContactEmail, ContactAddress
-16:41:10.938 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/1f6e929a1cbae174982539ab30b3db90cb803125): [200 OK] in 463ms
-Add hash in asserts
-16:41:11.377 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/2f6c4e4a2dbffd2dd4c9bf3788bb2169433afe25): [200 OK] in 433ms
-Add cahce for Contacts and Croups
-16:41:11.732 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/085022acfbb755603edc24a8e7a4b42ebfc5705d): [200 OK] in 353ms
-Refactoring
-16:41:12.069 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/f333a14f83f74985c1c56624574bcf19acae2753): [200 OK] in 335ms
-Refactoring
-16:41:12.442 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/4bfb7ee23d21aa33555ec1f69a7985a0f128464a): [200 OK] in 373ms
-Change BeforeMethod to BeforeSuite for launch 1 browser for all tests
-16:41:12.841 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/4ebfc894f5a8e351a9585d64e33ca767b0f6130e): [200 OK] in 398ms
-Add parameter "index" to "initContactModification" method
-16:41:13.229 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/894ba0a34b9973c00692a64beab33a8ae2f836dc): [200 OK] in 386ms
-Add asserts to AddNewContactTests, ContactDeletionTests and ContactModification.
-16:41:13.619 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/b6bd3c0656253fd6188d493a4485a9917f344731): [200 OK] in 388ms
-Update GroupCreation and GroupModification
-16:41:13.985 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/55138447f36fae3f2a283d3384123cca69f19d52): [200 OK] in 366ms
-Update GroupCreationTests.java
-
-change assert
-16:41:14.352 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/f62f765d4c62d82a03c94b8f4622e8355f01970d): [200 OK] in 366ms
-Add assert to the GroupCreation test
-16:41:14.690 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/c02f296d671e67f467ee1cf70202803d55e81108): [200 OK] in 337ms
-Add assert to the GroupModification test
-16:41:15.046 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/92cd1b3cfcda337d0e390537c2efad0b221f17c5): [200 OK] in 352ms
-Add asset to the GroupDeletion test
-16:41:15.671 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/1ca8aac5c29eb272d36fe69f2cec9360e8d8f24e): [200 OK] in 624ms
-Add compare list sizes
-16:41:16.025 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/b4ea35693c03c5469a9871684fcfca22e7dee832): [200 OK] in 351ms
-Change selectGroup method
-16:41:16.404 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/d49b6d303c4f9ad5a5a9edb7c027c8c6959d45c8): [200 OK] in 378ms
-Add asserts for creation, modify and delete group tests
-16:41:16.789 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/d59ebc61050fd8f850545b8031b19995bb669693): [200 OK] in 382ms
-Create classes Collections and Primes and test for Primes
-16:41:17.182 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/a115654c9770e74540d1daee3832eaf4f1cf36b6): [200 OK] in 391ms
-Creation verify and implementation preconditions  for Modify and Delete contact tests
-16:41:17.500 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/62c97438dcbb617fd8c2d21e4185761f47abcd5b): [200 OK] in 317ms
-Creation verify and implementation preconditions
-16:41:17.856 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/8429658a1f25fb1f7cc11a64584c4de9bee091ec): [200 OK] in 345ms
-Optimized page conversion
-16:41:18.225 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/d1ef1f571122fc0c2c25da42214cdda3b4cff579): [200 OK] in 368ms
-Add if-else for search element new_group on page
-16:41:18.569 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/3b4f279e4ec9352a42ee27d99d23bcda9b139173): [200 OK] in 342ms
-Replace "==" to "equals"
-16:41:18.953 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/b07811b475d731aba7b2402d7c7e6d8e4d497745): [200 OK] in 377ms
-Add method to change broweser for init test
-16:41:19.319 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/8a48528155541e97de38b482d5265be249b23aa6): [200 OK] in 359ms
-Update Equation and test for it
-16:41:19.690 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/b8925437abc457f8ae2ad8998d9c6a6fa3bd1ba5): [200 OK] in 369ms
-Add class Equation and test for it
-16:41:20.056 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/04ffcb781de2a733da2a1109138bbb39677c05d2): [200 OK] in 365ms
-Change version of org.seleniumhq.selenium
-16:41:20.755 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repositories/256505031/commits): [200 OK] in 698ms
-16:41:21.115 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/f52fc0261f4948d84a5f0763c9590118d25763bb): [200 OK] in 353ms
-Add tests for modify ans delete contact
-16:41:21.509 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/06d9a4cd67469bd1ba536e4aa16bc2dc7b306718): [200 OK] in 393ms
-Create test for modification selected group
-16:41:21.864 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/3e90e67c9a504190edba0a6fba378b8fac6a8059): [200 OK] in 354ms
-Create HelperBase, optimize ContactHelper,GroupHelper,NavigationHelper,SessionHelper
-16:41:22.235 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/ebece43cd900c565cc0c9d8c57e3e247b5d003d7): [200 OK] in 369ms
-Add some helper classes
-
-create ContactHelper, GroupHelper, NavigationsHelper, SessionHelper
-16:41:22.630 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/ae9c0eb8c90b904ab9ae83747e3a4285e56af674): [200 OK] in 392ms
-Create two-level tests architecture
-16:41:22.975 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/e32b6f3e4bf7ceca81d2fd780ed8244f6027422d): [200 OK] in 342ms
-Create TestBase class and test for delete selected group
-16:41:23.344 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/0b1b9516438b2e1707f59b75ad7f1e767805ce5a): [200 OK] in 367ms
-Add new Test for Add New Contact in addressbook
-16:41:23.751 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/16ce25b77bb24bcc6793292b199dae7c1530c095): [200 OK] in 405ms
-Refactor GroupCreationTests, Create class - GroupData
-16:41:24.187 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/d1e356525062cb63be298700904f2133347b0f3c): [200 OK] in 435ms
-Change test for creation group
-16:41:24.607 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/e729df925b2dca01a4d71b132a3c7e8d81caeb30): [200 OK] in 418ms
-Add new project Addressbook and test for creation group
-16:41:25.006 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/2bc83d5ad009000939f31d5d681cbe389728c58f): [200 OK] in 396ms
-Change method for search distance between points and test for it.
-16:41:25.363 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/d41dc9421ba809608db104f3c7bf01f82b9598ef): [200 OK] in 356ms
-Add tests for Point
-16:41:25.717 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/d52cf44e73cff117e202e83b72749d48ba9095bd): [200 OK] in 352ms
-Add test for testing Square
-16:41:26.072 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/52d99588db5aa0894bef79522cd21f15d6e4e074): [200 OK] in 353ms
-Update gitignore
-16:41:26.397 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/0277c177c2f64aec56aa949f113bd425390ef3a6): [200 OK] in 324ms
-removed build
-16:41:26.786 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/abee98c9a2c9a938ccc6be90562b0bf5d4143290): [200 OK] in 387ms
-Without folder build
-16:41:27.157 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/6f448a372856db09ffd6aec874c9359941b63941): [200 OK] in 369ms
-Removed build
-16:41:27.547 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/cd6375497ecd81ab8411ba63c985371849f8b125): [200 OK] in 390ms
-Update .gitignore
-16:41:27.924 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/55c4a49213b616a67f0288fa3d976b9f06e1bebb): [200 OK] in 375ms
-Added folder build
-16:41:28.307 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/d2af136ca71cb8972cc509bc627fb171c8f6786c): [200 OK] in 383ms
-Removed folder build
-16:41:28.721 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/be1c44cd335dd06015290e1ee59e10f4f66ee7f9): [200 OK] in 410ms
-Added method for search distance between 2 points
-
-Lesson 1 - task 1
-16:41:29.371 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/ef28db896b2737a117ae78be199f4b5b77fd9b89): [200 OK] in 648ms
-Add classes Square and Rectangle
-16:41:29.739 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/7ddf034d9ac923ffe682bbc4e85497f63ee3a304): [200 OK] in 366ms
-Добавлено несколько функций
-16:41:30.109 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/25d51098f0c69f0567c5f2d69a1e1f869d1cce14): [200 OK] in 370ms
-Создан пакет для моей 1 программы
-16:41:30.431 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/424d46f00b3da4c71b9040c3f2a3982274b0b894): [200 OK] in 319ms
-Создан проект для IDEA
-16:41:30.844 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/fe102b04e16529b3d5e10d3a5423185c48703e68): [200 OK] in 412ms
-Добавлен запускатель для Gradle
-16:41:31.205 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/237b8effba34be9eb493c02c911d15849eb48940): [200 OK] in 359ms
-Создан проект "песочница"
-16:41:31.599 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits/2c821d7c1dded640db38d614d1c7871e97ef1492): [200 OK] in 394ms
-Initial commit
+{&quot;message&quot;:&quot;Bad credentials&quot;,&quot;documentation_url&quot;:&quot;https://developer.github.com/v3&quot;}&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at com.jcabi.http.response.RestResponse.assertStatus(RestResponse.java:111)
+	at com.jcabi.github.RtValuePagination$Items.fetch(RtValuePagination.java:195)
+	at com.jcabi.github.RtValuePagination$Items.hasNext(RtValuePagination.java:179)
+	at ru.stqa.pft.github.GithubTests.testCommits(GithubTests.java:16)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:141)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:90)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:132)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:412)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+	at java.lang.Thread.run(Thread.java:748)
+</failure>
+  </testcase>
+  <system-out><![CDATA[18:54:53.786 [Test worker] INFO com.jcabi.http.request.BaseRequest - #fetch(GET api.github.com /repos/AnnaBland/java_testing/commits): [401 Unauthorized] in 1s
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
